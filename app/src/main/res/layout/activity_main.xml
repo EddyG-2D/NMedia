@@ -16,7 +16,7 @@
         app:layout_constraintBottom_toTopOf="@id/barrierHeader"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/ic_launcher_foreground" />
+        app:srcCompat="@drawable/ic_launcher_foreground" />
 
     <TextView
         android:id="@+id/author"
@@ -50,7 +50,7 @@
         android:layout_height="@dimen/menu_size"
         android:background="@android:color/transparent"
         android:contentDescription="@string/description_post_menu"
-        android:src="@drawable/ic_baseline_more_vert_24"
+        android:src="@drawable/ic_more_vert_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -88,10 +88,10 @@
         android:contentDescription="@string/description_post_like"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/barrierFooter"
-        app:srcCompat="@drawable/ic_baseline_favorite_border_24" />
+        app:srcCompat="@drawable/ic_like_24" />
 
     <TextView
-        android:id="@+id/like_number"
+        android:id="@+id/likeCount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="@string/description_post_like_number"
@@ -106,12 +106,12 @@
         android:layout_height="48dp"
         android:background="@android:color/transparent"
         android:contentDescription="@string/description_post_share"
-        app:layout_constraintStart_toEndOf="@+id/like_number"
+        app:layout_constraintStart_toEndOf="@+id/likeCount"
         app:layout_constraintTop_toBottomOf="@+id/barrierFooter"
-        app:srcCompat="@drawable/ic_baseline_share_24" />
+        app:srcCompat="@drawable/ic_share_24" />
 
     <TextView
-        android:id="@+id/share_number"
+        android:id="@+id/shareCount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="@string/description_post_share_number"
@@ -126,12 +126,12 @@
         android:layout_height="48dp"
         android:background="@android:color/transparent"
         android:contentDescription="@string/description_post_views"
-        app:layout_constraintEnd_toStartOf="@+id/views_number"
+        app:layout_constraintEnd_toStartOf="@+id/viewsCount"
         app:layout_constraintTop_toBottomOf="@+id/barrierFooter"
-        app:srcCompat="@drawable/ic_baseline_remove_red_eye_24" />
+        app:srcCompat="@drawable/ic_remove_red_eye_24" />
 
     <TextView
-        android:id="@+id/views_number"
+        android:id="@+id/viewsCount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="@string/description_post_views_number"
