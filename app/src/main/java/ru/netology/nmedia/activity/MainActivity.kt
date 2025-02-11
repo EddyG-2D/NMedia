@@ -2,12 +2,12 @@ package ru.netology.nmedia.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.viewModels
-import ru.netology.nmedia.R
-import ru.netology.nmedia.ViewModel.PostViewModel
+import ru.netology.nmedia.viewModel.PostViewModel
+import ru.netology.nmedia.adapter.OnInteractionListener
+import ru.netology.nmedia.adapter.PostsAdapter
 import ru.netology.nmedia.databinding.ActivityMainBinding
-import ru.netology.nmedia.dto.count
+import ru.netology.nmedia.dto.Post
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,38 +16,20 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val viewModel: PostViewModel by viewModels()
-        viewModel.data.observe(this) { post ->
-            with(binding) {
-                author.text = post.author
-                published.text = post.published
-                content.text = post.content
-                like.setImageResource(
-                    if (post.likedByMe) R.drawable.ic_liked_24 else R.drawable.ic_like_24
-                )
-                if (post.repostByMe) {
-                    share.setImageResource(R.drawable.ic_share_24)
-                }
-                likeCount?.text = post.liked.toString()
-                likeCount?.text = count(post.liked)
-                shareCount?.text = count(post.repost)
 
+        val adapter = PostsAdapter(object : OnInteractionListener {
+            override fun onLike(post: Post) {
+                viewModel.likeById(post.id)
+            }
 
-                root.setOnClickListener {
-                    Log.d("staff", "content")
-                }
-
-                avatar.setOnClickListener {
-                    Log.d("staff", "avatar")
-                }
+            override fun onShare(post : Post) {
+                viewModel.shareById(post.id)
             }
         }
-
-        binding.like?.setOnClickListener {
-            viewModel.like()
-            Log.d("staff", "like")
-            }
-        binding.share.setOnClickListener {
-            viewModel.share()
+        binding.main.adapter = adapter
+        viewModel.data.observe(this) { posts ->
+            adapter.submitList(posts)
         }
     }
 }
+
