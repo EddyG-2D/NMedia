@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
             override fun onShare(post : Post) {
                 viewModel.shareById(post.id)
             }
-        }
+        })
         binding.main.adapter = adapter
         viewModel.data.observe(this) { posts ->
             adapter.submitList(posts)
