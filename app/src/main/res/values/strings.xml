@@ -13,4 +13,12 @@
     <string name="description_post_share_number" translatable="false">Post number of share</string>
     <string name="description_post_views" translatable="false">Post views</string>
     <string name="description_post_views_number" translatable="false">Post number of views</string>
+    <string name="description_save" translatable="false">Save</string>
+    <string name="menu_remove">Remove</string>
+    <string name="menu_edit">Edit</string>
+    <string name="error_empty_content" translatable="false">Err_empty_content</string>
+    <string name="post_text">Post text</string>
+    <string name="groupTitle">"Edit Message"</string>
+    <string name="description_post_clear" translatable="false">Clear</string>
+
 </resources>
