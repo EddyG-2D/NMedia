@@ -96,7 +96,6 @@
         app:layout_constraintBottom_toTopOf="@+id/groupText"
         app:layout_constraintEnd_toStartOf="@+id/clear"
         app:layout_constraintStart_toEndOf="@+id/groupView"
-        app:layout_constraintTop_toTopOf="@id/editedTextTop"
         app:layout_constraintVertical_chainStyle="packed"
         tools:text="@sample/posts.json/groupInfo/title" />
 
