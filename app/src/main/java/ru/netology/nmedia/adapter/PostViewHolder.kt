@@ -17,15 +17,11 @@ class PostViewHolder(
             author.text = post.author
             published.text = post.published
             content.text = post.content
-            like.setImageResource(
-                if (post.likedByMe) R.drawable.ic_liked_24 else R.drawable.ic_like_24
-            )
-            if (post.repostByMe) {
-                share.setImageResource(R.drawable.ic_share_24)
-            }
+            like.isChecked = post.likedByMe
+            like.text = post.liked.toString()
 
-            likeCount?.text = count(post.liked)
-            shareCount?.text = count(post.repost)
+            share.isChecked = post.repostByMe
+            share.text = count(post.repost)
 
             root.setOnClickListener {
                 Log.d("staff", "content")
