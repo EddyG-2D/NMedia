@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name" translatable="false">Nmedia</string>
     <string name="nmedia">NMedia!</string>
-    <string name="NMedia" >NMedia</string>
+    <string name="NMedia">NMedia</string>
     <string name="description_post_author_avatar" translatable="false">Post author avatar</string>
     <string name="description_post_author" translatable="false">Post author</string>
     <string name="description_post_published" translatable="false">Post published</string>
@@ -16,9 +16,12 @@
     <string name="description_save" translatable="false">Save</string>
     <string name="menu_remove">Remove</string>
     <string name="menu_edit">Edit</string>
-    <string name="error_empty_content" translatable="false">Err_empty_content</string>
+    <string name="error_empty_content" translatable="false">Content can\'t be empty</string>
     <string name="post_text">Post text</string>
     <string name="groupTitle">"Edit Message"</string>
     <string name="description_post_clear" translatable="false">Clear</string>
+    <string name="chooser_share_post">Share</string>
+    <string name="video_url">Video URL (RUTUBE)</string>
+    <string name="description_post_video" translatable="false">Post video</string>
 
 </resources>

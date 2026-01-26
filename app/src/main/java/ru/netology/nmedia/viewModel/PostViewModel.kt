@@ -30,9 +30,25 @@ class PostViewModel : ViewModel() {
         edited.value = post
     }
 
-    fun saveContent(content: String) {
+    fun save(content: String, video: String?) {
+        repository.save(
+            Post(
+                id = 0,
+                author = "Me",
+                content = content,
+                published = "Now",
+                liked = 0,
+                likedByMe = false,
+                repost = 0,
+                repostByMe = false,
+                video = video
+            )
+        )
+    }
+
+    fun saveContent(content: String, video: String?) {
         edited.value?.let { editPost ->
-            repository.save(editPost.copy(content = content))
+            repository.save(editPost.copy(content = content, video = video))
         }
         edited.value = empty
     }

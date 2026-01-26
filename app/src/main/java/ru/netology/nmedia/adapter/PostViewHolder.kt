@@ -1,6 +1,7 @@
 package ru.netology.nmedia.adapter
 
 import android.util.Log
+import android.view.View
 import androidx.appcompat.widget.PopupMenu
 import androidx.recyclerview.widget.RecyclerView
 import ru.netology.nmedia.R
@@ -23,12 +24,15 @@ class PostViewHolder(
             share.isChecked = post.repostByMe
             share.text = count(post.repost)
 
-            root.setOnClickListener {
-                Log.d("staff", "content")
+            videoPreview.visibility = if (post.video != null) View.VISIBLE else View.GONE
+            if (post.video != null) {
+                videoPreview.setImageResource(R.drawable.video)
             }
 
-            avatar.setOnClickListener {
-                Log.d("staff", "avatar")
+            videoPreview.setOnClickListener {
+                post.video?.let { videoUrl ->
+                    onInteractionListener.onVideoPlay(videoUrl)
+                }
             }
 
             like.setOnClickListener {
@@ -58,6 +62,15 @@ class PostViewHolder(
                         }
                     }
                 }.show()
+            }
+
+
+            root.setOnClickListener {
+                Log.d("staff", "content")
+            }
+
+            avatar.setOnClickListener {
+                Log.d("staff", "avatar")
             }
         }
     }

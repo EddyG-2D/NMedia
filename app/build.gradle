@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id 'kotlin-parcelize'
 }
 
 android {
@@ -43,6 +44,7 @@ dependencies {
     implementation libs.androidx.constraintlayout
     implementation libs.androidx.lifecycle.viewmodel
     implementation libs.androidx.lifecycle.livedata
+    implementation libs.activity
     testImplementation libs.junit
     androidTestImplementation libs.androidx.junit
     androidTestImplementation libs.androidx.espresso.core
